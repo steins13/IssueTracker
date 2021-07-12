@@ -6,71 +6,6 @@ const server = require('../server');
 chai.use(chaiHttp);
 
 suite('Functional Tests', function() {
-  
-
-  // test("Test 1", (done) => {
-  //   chai
-  //     .request(server)
-  //     .post("/api/issues/steins")
-  //     .send({
-  //       issue_title: 'Issue to be Deleted',
-  //       issue_text: 'Functional Test - Delete target',
-  //       created_by: 'fCC'
-  //     })
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       assert.isObject(res.body);
-  //       done();
-  //     })
-  // })
-
-  // test("Test 2", (done) => {
-  //   chai
-  //     .request(server)
-  //     .get("/api/issues/steins?_id=60ec05a6b6441056f82ef8b9")
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       assert.isArray(res.body);
-  //       assert.isObject(res.body[0]);
-  //       assert.isAbove(
-  //         Date.parse(res.body[0].updated_on),
-  //         Date.parse(res.body[0].created_on)
-  //       );
-  //       done();
-  //     })
-  // })
-
-  // test("Test 3", (done) => {
-  //   chai
-  //     .request(server)
-  //     .put("/api/issues/steins")
-  //     .send({
-
-  //     })
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       done();
-  //     })
-  // })
-
-  // test("Test 4", (done) => {
-  //   chai
-  //     .request(server)
-  //     .delete("/api/issues/steins")
-  //     .send({
-  //       _id: '5f665eb46e296f6b9b6a504d', 
-  //       issue_text: 'New Issue Text'
-  //     })
-  //     .end((err, res) => {
-  //       console.log(res.body)
-  //       assert.isObject(res.body);
-  //       assert.deepEqual(res.body, {
-  //         error: 'could not delete',
-  //         _id: '5f665eb46e296f6b9b6a504d'
-  //       }); 
-  //       done();
-  //     })
-  // })
 
   let idForDelete;
 
@@ -300,42 +235,43 @@ suite('Functional Tests', function() {
       })
   })
 
-  let fuckId;
-  test("Fuck", (done) => {
-    chai
-      .request(server)
-      .post("/api/issues/steins")
-      .send({
-        issue_title: 'Issue to be Updated',
-        issue_text: 'Functional Test - Put target',
-        created_by: 'fCC'
-      })
-      .end((err, res) => {
-        fuckId = res.body._id
-        chai
-          .request(server)
-          .put("/api/issues/steins")
-          .send({
-            _id: fuckId, 
-            issue_text: 'New Issue Text'
-          })
-          .end((err, res) => {
-            assert.isObject(res.body);
-            assert.deepEqual(res.body, {result: 'successfully updated', _id: fuckId});
-            chai
-              .request(server)
-              .get("/api/issues/steins?_id=" + fuckId)
-              .end((err, res) => {
-                assert.isArray(res.body);
-                assert.isObject(res.body[0]);
-                assert.isAbove(
-                  Date.parse(res.body[0].updated_on),
-                  Date.parse(res.body[0].created_on)
-                );
-              })
-            done();
-          })
-      })
-  })
+  //FUCK
+  // let fuckId;
+  // test("Fuck", (done) => {
+  //   chai
+  //     .request(server)
+  //     .post("/api/issues/steins")
+  //     .send({
+  //       issue_title: 'Issue to be Updated',
+  //       issue_text: 'Functional Test - Put target',
+  //       created_by: 'fCC'
+  //     })
+  //     .end((err, res) => {
+  //       fuckId = res.body._id
+  //       chai
+  //         .request(server)
+  //         .put("/api/issues/steins")
+  //         .send({
+  //           _id: fuckId, 
+  //           issue_text: 'New Issue Text'
+  //         })
+  //         .end((err, res) => {
+  //           assert.isObject(res.body);
+  //           assert.deepEqual(res.body, {result: 'successfully updated', _id: fuckId});
+  //           chai
+  //             .request(server)
+  //             .get("/api/issues/steins?_id=" + fuckId)
+  //             .end((err, res) => {
+  //               assert.isArray(res.body);
+  //               assert.isObject(res.body[0]);
+  //               assert.isAbove(
+  //                 Date.parse(res.body[0].updated_on),
+  //                 Date.parse(res.body[0].created_on)
+  //               );
+  //             })
+  //           done();
+  //         })
+  //     })
+  // })
 
 });

@@ -21,3 +21,114 @@ body {
 .id {
   font-size: 10.5px;
 }
+
+#issueHeader {
+  height: 100px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#projectTitle {
+  font-family: 'Lateef', cursive;
+  font-size: 60px;
+  color: #333333;
+  background-color: ghostwhite;
+  text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+#issueBody {
+  background-color:ghostwhite ;
+}
+
+#submitNewIssue {
+  margin: 30px;
+  border: 3px ridge rgba(94,94,94,0.41);
+  width: 850px;
+  background-color:#f3f3f3;
+  margin-bottom: 60px;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+#submitHeader {
+  font-family: 'Lateef';
+}
+
+#issueButton {
+  margin: 30px;
+}
+
+#threeMusketeers {
+  margin: 5px;
+}
+
+#issueDisplay {
+  width: 1200px;
+  padding: 30px 10px;
+  font-family: "Lateef";
+  font-size: 20px;
+}
+
+#box1header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-family: "Lateef";
+}
+
+#box1 {
+  margin: auto;
+  text-align: center;
+}
+
+#box2header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-family: "Lateef";
+}
+
+#box2 {
+  margin: auto;
+  text-align: center;
+}
+
+#box3header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-family: "Lateef";
+}
+
+#box3 {
+  margin: auto;
+  text-align: center;
+}
+
+#indexHeader {
+  height: 100px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;  
+}
+
+#indexHeaderInside {
+  font-family: 'Lateef', cursive;
+  font-size: 70px;
+  color: #333333;
+  margin-top: 20px;
+  text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+}
+
+#indexBody {
+  background-color:ghostwhite ;
+}

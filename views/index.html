@@ -7,66 +7,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/public/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <header>
-      <h1>
-        Issue Tracker
+  <body id="indexBody">
+    <header id="indexHeader">
+      <h1 id="indexHeaderInside" class="text-center">
+         Issue Tracker
       </h1>
     </header>
-    <section style="margin: 0 50px;">
-      <h3>Example <code>GET</code> usage</h3>
-      <code>/api/issues/{project}</code><br>
-      <code>/api/issues/{project}?open=true&amp;assigned_to=Joe</code><br>
-      <h3>Example return</h3>
-      <pre>
-<code>[
-  { 
-    "_id": "5871dda29faedc3491ff93bb",
-    "issue_title": "Fix error in posting data",
-    "issue_text": "When we post data it has an error.",
-    "created_on": "2017-01-08T06:35:14.240Z",
-    "updated_on": "2017-01-08T06:35:14.240Z",
-    "created_by": "Joe",
-    "assigned_to": "Joe",
-    "open": true,
-    "status_text": "In QA"
-  },
-  ...
- ]
-</code>
-</pre>
-    </section>
-    <hr style='margin: 0 50px'>
+    
     <section id='testui' style='margin-left: 50px;'>
-      <h3>Examples</h3>
-      Go to <a href='/api/issues/apitest/'><code>/api/issues/apitest/</code></a>  project
-      <h2 style="text-align: left">API Tests</h2>
-      <h3>Submit issue on <i>apitest</i></h3>
-      <form id="testForm" class="border">
-        <input type="text" name="issue_title" placeholder="*Title" style="width: 100px" required=''><br>
-        <textarea type="text" name="issue_text" placeholder="*Text" style="width: 100px" required=''></textarea><br>
-        <input type="text" name="created_by" placeholder="*Created by" style="width: 100px" required=''><br>
-        <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 100px"><br>
-        <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
-        <button type="submit">Submit Issue</button>
-      </form><br>
-      <h3>Update issue on <i>apitest</i> (Change any or all to update issue on the _id supplied)</h3>
-      <form id="testForm2" class="border">
-        <input type="text" name="_id" placeholder="*_id" style="width: 100px" required=''><br>
-        <input type="text" name="issue_title" placeholder="(opt)Title" style="width: 100px"><br>
-        <textarea type="text" name="issue_text" placeholder="(opt)Text" style="width: 100px"></textarea><br>
-        <input type="text" name="created_by" placeholder="(opt)Created by" style="width: 100px"><br>
-        <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 100px"><br>
-        <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
-        <label><input type="checkbox" name="open" value="false"> Check to close issue</label><br>
-        <button type="submit">Submit Issue</button>
-      </form><br>
-      <h3>Delete issue on <i>apitest</i></h3>
-      <form id="testForm3" class="border">
-        <input type="text" name="_id" placeholder="_id" style="width: 100px" required=''><br>
-        <button type="submit">Delete Issue</button>
-      </form>
+      <div style="font-size: 15px;">
+        Click <a href='/apitest'><code>here</code></a> to view all issues on <i>apitest</i>
+      </div>
+      <div class="row">
+        <div class="col-4 btn align-center" id="box1">
+          <h3 id="box1header">Submit issue on <i>apitest</i></h3>
+          <form id="testForm" class="align-center">
+            <input type="text" name="issue_title" placeholder=" *Title" required='' style = "width: 320px; height: 35px;" class="form-control-sm m-1"><br>
+            <textarea type="text" name="issue_text" placeholder=" *Text" required='' style="width: 320px; height: 150px;" class="form-control-sm m-1"></textarea><br>
+            <input type="text" name="created_by" placeholder=" *Created by" required='' style="width: 250px;" class="form-control-sm m-1"><br>
+            <input type="text" name="assigned_to" placeholder=" (opt)Assigned to" style="width: 250px;" class="form-control-sm m-1"><br>
+            <input type="text" name="status_text" placeholder=" (opt)Status text" style="width: 250px;" class="form-control-sm m-1"><br>
+            <button type="submit" id="box1btn" class="btn btn-secondary m-2">Submit Issue</button>
+          </form><br>
+        </div>
+        <div class="col-4 btn align-center" id="box2">
+          <h3 id="box2header">Update issue on <i>apitest</i></h3>
+          <form id="testForm2" class="align-center">
+            <input type="text" name="_id" placeholder="*_id" style="width: 320px; height: 35px;" class="form-control-sm m-1" required=''><br>
+            <input type="text" name="issue_title" placeholder="(opt)Title" style="width: 320px; height: 35px;" class="form-control-sm m-1"><br>
+            <textarea type="text" name="issue_text" placeholder="(opt)Text" style="width: 320px; height: 120px;" class="form-control-sm m-1"></textarea><br>
+            <input type="text" name="created_by" placeholder="(opt)Created by" style="width: 250px;" class="form-control-sm m-1"><br>
+            <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 250px;" class="form-control-sm m-1"><br>
+            <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 250px;" class="form-control-sm m-1"><br>
+            <label><input type="checkbox" name="open" value="false" class="m-1"> Check to close issue</label><br>
+            <button type="submit" id="box2btn" class="btn btn-secondary m-2">Submit Issue</button>
+          </form><br>
+        </div>
+        <div class="col-4 btn align-center" id="box3">
+          <h3 id="box3header">Delete issue on <i>apitest</i></h3>
+          <form id="testForm3" class="align-center">
+            <input type="text" name="_id" placeholder="_id" style="width: 250px" class="form-control-sm m-1" required=''><br>
+            <button type="submit" id="box3btn" class="btn btn-secondary m-2">Delete Issue</button>
+          </form>
+        </div>
+      </div>
       <code id='jsonResult'></code>
     </section>
     <hr style='margin: 50px; margin-top: 200px'>
@@ -111,5 +100,7 @@
         });
       });
    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
